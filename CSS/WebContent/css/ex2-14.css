@@ -1,0 +1,29 @@
+@charset "UTF-8";
+
+h3[class] {
+	color: blue;
+}
+
+p[class="icox"] {
+	color: red;
+}
+
+p[class~="icox"] {
+	color: red;
+}
+
+p[class|="icox"] {
+	color: red;
+}
+
+p[class^="icox"] {
+	color: red;
+}
+
+p[class$="icox"] {
+	color: red;
+}
+
+p[class*="icox"] {
+	color: red;
+}

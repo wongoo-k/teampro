@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="css/rockGame.css">
+<script type="text/javascript" src="js/rockGame.js"></script>
+</head>
+<body>
+<!-- 
+[1차 요구사항]
+- 컴퓨터 끼리 가위바위보를 자동으로 게임진행
+   0:바위 , 1:가위 , 2:보 로 정의하여 계산 혹은 조건문을 통해 구현 
+
+[2차 요구사항]
+- 게임중이면 다시 게임이 시작되지 않도록 
+- 게임 히스토리 저장하여 화면에 출력 
+
+[3차 요구사항]
+- 자동으로 20번 게임 진행하여 화면에 표시 
+
+* Table tag를 사용하여 `구현한것을  div table 로 변경해서 구현 
+ -->
+ 
+ <table border="1">
+    <tr>
+       <th>Player1</th>
+       <th>Player2</th>
+    </tr>
+    <tr>
+       <td>
+          <div class="innerImgDiv">
+             <img src="img/start.png" alt="0">
+          </div>
+       </td>
+       <td>
+          <div class="innerImgDiv">
+             <img src="img/start.png" alt="0">
+          </div>
+       </td>    </tr>
+    <tr>
+       <td colspan="2">
+          <button id="rockGo" onclick="rockGo()">가위바위보!</button>
+          <button onclick="rockStop()">결과확인</button>
+           <button onclick="resultAll()">전체결과확인</button>
+ 
+       </td>
+    </tr>
+    <tr>
+       <td colspan="2">
+          <div id="result">결과확인</div>
+       </td>
+    </tr>
+    
+    <tr>
+       <td colspan="2">
+          <div id="resultAll">전체 결과 한번에 표현</div>
+       </td>
+    </tr>
+    
+ 
+ </table>
+ 
+</body>
+</html>

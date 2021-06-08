@@ -1,0 +1,11 @@
+@charset "UTF-8";
+
+div {
+/* 	position: fixed; */
+	position: relative;
+	left: 100px;
+	top: 10px;
+	width: 200px;
+	height: 200px;
+	background: #718c00;
+}

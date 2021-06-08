@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>로또게임</title>
+    <script src="js/test.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/test.css"/>
+</head>
+<body>
+    <div class="header" style="background-color:#FFFFE0;">    
+        <h2 id="subject">제 1회 로또게임 (6/45)</h2>
+        </div>
+        <dv class="row">
+        <div class="column1" style="background-color:#B0E0E6;"><button id="buttonPC" class="buttonPick" onclick="pickLottoPC();">컴퓨터 뽑기</button><br />
+        <p id="pcp">   <span class="pcButton"></span>
+           <span class="pcButton"></span>
+           <span class="pcButton"></span>
+           <span class="pcButton"></span>
+           <span class="pcButton"></span>
+           <span class="pcButton"></span>
+           <span class="pcButton" id="bonus"></span>
+        </p>
+        </div>
+        <div class="column1" style="background-color:#B0E0E6;"><button class="buttonPick" onclick="pickLottoUser();">자동</button><br />
+        <div id="manualPick">
+           <input type="number" min="1" max="45" width="15px" class="savePick">
+           <input type="number" min="1" max="45" width="15px" class="savePick">
+           <input type="number" min="1" max="45" width="15px" class="savePick">
+           <input type="number" min="1" max="45" width="15px" class="savePick">
+           <input type="number" min="1" max="45" width="15px" class="savePick">
+           <input type="number" min="1" max="45" width="15px" class="savePick">
+           <button class="buttonPick" onclick="savePick();">입력</button><br />
+        </div>
+      <p id="pcp1">   <span class="userButton"></span>
+         <span class="userButton"></span>
+         <span class="userButton"></span>
+         <span class="userButton"></span>
+         <span class="userButton"></span>
+         <span class="userButton"></span>
+      </p>
+        </div>
+        <div class="column1" style="background-color:#B0E0E6;">
+        <button class="buttonPick" onclick="compareNum();">결과보기</button>
+        <button class="buttonPick" style="margin:20px;" onclick="printResult();">전적보기</button>
+        <button class="buttonPick" onclick="printTwenty();">돌리기</button>
+        <button class="buttonPick" onclick="resetResult();">리셋</button><div id="resultScore"></div></div>
+        <div class="column2" style="background-color:#FFE4E1;" id="lottoNum"></div>
+        <div class="column" style="background-color:#FFE4E1;" id="pcResult"></div>
+        <div class="column" style="background-color:#FFE4E1;" id="userResult"></div>
+        <div class="column2" style="background-color:#FFE4E1;" id="lottoScore"></div>
+    </dv>
+</body>
+</html>

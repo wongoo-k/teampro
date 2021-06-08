@@ -1,0 +1,64 @@
+@charset "UTF-8";
+
+#clock {
+	height: 300px;
+	width: 300px;
+	background-image:
+		url("http://gdimg.gmarket.co.kr/909282743/still/600?ver=0");
+	background-size: 350px;
+	background-position: -40px -50px;
+}
+
+#dc {
+	position: relative;
+	top: 140px;
+	left: 40px;
+	font-size: 20pt;
+	text-align: center;
+	font-family: Gugi;
+	font-weight: bold;
+	background-color: white;
+	color: red;
+	width: 200px;
+	border-radius: 10px;
+}
+
+#btn {
+	position: relative;
+	top: 130px;
+	left: 95px;
+	width: 80px;
+	background-color: blue;
+	text-align: center;
+	border-radius: 10px;
+	cursor: pointer;
+	color: white;
+	font-family: Gugi;
+}
+
+#btn:hover {
+	background-color: orange;
+}
+
+#setAlarm {
+	position: relative;
+	top: 160px;
+	left: 40px;
+	display: none;
+	background-color: white;
+}
+
+#setAlarmInput {
+	width: 50px;
+}
+
+.move {
+	-webkit-animation: clockmove infinite 4s;
+}
+   
+@-webkit-keyframes clockmove{
+	20%{-webkit-transform:translate(40px,40px);}
+	40%{-webkit-transform:translate(-40px,100px);}
+	60%{-webkit-transform:translate(50px,200px);}
+	90%{-webkit-transform:translate(200px,-100px);}
+}

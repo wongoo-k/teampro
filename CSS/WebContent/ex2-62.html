@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ANIMATION</title>
+
+<style type="text/css">
+@keyframes sample {
+	0% { background: firebrik; transform: translate(10px,20px); }
+	50% { background: cornflowerblue; transform: translate(40px,0px); }
+	100% { background: forestgreen; transform: translate(70px,0px); }
+}
+p {
+	width: 100px; height: 100px;
+	padding: 10px; background: firebrik;
+	animation-name: sample;
+	animation-duration: 4s;
+	animation-fill-mode: forwards;
+	animation-iteration-count: infinite;	
+}
+</style>
+</head>
+<body>
+<p>
+
+Animation..
+</p>
+</body>
+</html>

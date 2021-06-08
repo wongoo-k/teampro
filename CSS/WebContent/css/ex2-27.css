@@ -1,0 +1,17 @@
+@charset "UTF-8";
+.shadow1 {
+	font: 30px "Gugi Black";
+	text-shadow: 4px 4px rgba(100,100,0,0.6);
+}
+.shadow2 {
+	font: 30px "Gugi Black";
+	color: #135;
+	text-shadow: 2px 2px #246,
+	3px 3px #357,
+	4px 4px #468,
+	5px 5px #579,
+	6px 6px #68a,
+	7px 7px #79b,
+	8px 8px #8ac;
+}
+p { text-shadow: 2px 3px 5px rgba(0,0,0,0.4); }

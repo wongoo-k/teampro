@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.hk.board">
+<!-- 
+  resultMap은 저장소 설정이기도 하지만 테이블 컬럼명을 alias로 바꿔쓸때도 사용가능 
+	<resultMap type="HkDto" id="HkDtoMap">
+		<result column="SEQ" property="seq"/>
+		<result column="ID" property="id"/>
+		<result column="NAME" property="name"/>
+		<result column="TITLE" property="title"/>
+		<result column="CONTENT" property="content"/>
+		<result column="REGDATE" property="regdate"/>
+		collection 은Table Join 할때 Join된 다른 Table로 가게해서 저장할수 있게 함
+		<collection property="dtoMap" resultMap="dtoMap"></collection> 
+	</resultMap>
+		
+	<resultMap type="Map" id="dtoMap">
+		<result column="SEQ" property="seq"/>
+		<result column="ID" property="id"/>
+		<result column="NAME" property="name"/>
+		<result column="TITLE" property="title"/>
+		<result column="CONTENT" property="content"/>
+		<result column="REGDATE" property="regdate"/>
+	</resultMap>	
+		
+	include를 사용하기 위한 선언
+	<sql id ="test">
+		SEQ = #{seq}
+    </sql>
+	 
+	 특수문자 (특히 부등호 <>) 를 쓸땐 오류가 발생하지 않게 CDATA 안에 작성
+	 <![CDATA[
+	 	SELECT SEQ, ID, NAME, TITLE, CONTENT, REGDATE 
+		FROM HKBOARD WHERE SEQ < 10
+	 ]]>
+ -->
+	<select id="getAllList" resultType="HkDto"> <!-- resultMap 을 사용할꺼면 위에 정의를 해 놔야함 -->
+		SELECT SEQ, ID, NAME, TITLE, CONTENT, REGDATE 
+		FROM HKBOARD 
+   <!-- <where> *Dynamic Query
+			<if test="seq != null">
+				<include refid="test"></include>
+			</if>
+		</where> -->
+		ORDER BY REGDATE DESC
+	</select>
+	
+	<select id="getBoard" parameterType="int" resultType="HkDto"> <!-- 전달하려는 값이 1개일 경우 그 값의 타입으로 지정 -->
+		SELECT SEQ, ID, NAME, TITLE, CONTENT, REGDATE
+		FROM HKBOARD WHERE SEQ = #{seq}
+<!-- 	<where> *Dynamic Query
+			<if test="seq != null">
+				SEQ = #{seq}
+			</if>
+		</where> -->
+	</select>
+	
+	<insert id="insertBoard" parameterType="HkDto">
+		INSERT INTO HKBOARD
+		VALUES (HKBOARD_SEQ.NEXTVAL,#{id},#{name},#{title},#{content},SYSDATE)
+	</insert>
+	
+ 	<update id="updateBoard" parameterType="HkDto">
+		UPDATE HKBOARD SET
+		TITLE = #{title}, CONTENT = #{content}, REGDATE=SYSDATE
+		WHERE SEQ = #{seq}
+	</update>
+	
+	<delete id="deleteBoard" parameterType="int">
+		DELETE FROM HKBOARD WHERE SEQ = #{seq}
+	</delete>
+	
+	<!-- *Dynamic Query -->
+	<delete id="muldelBoard" parameterType="Map">
+		DELETE FROM HKBOARD WHERE SEQ IN 
+		<foreach collection="chks" item="i" separator="," open="(" close=")">		
+			#{i}
+		</foreach>
+	</delete>
+	
+</mapper>

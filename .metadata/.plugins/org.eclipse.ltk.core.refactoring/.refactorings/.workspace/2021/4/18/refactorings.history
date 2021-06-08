@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;springMVC_websoket&apos; to &apos;springMVC_FCM_push&apos;" description="Rename resource &apos;springMVC_websoket&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/springMVC_websoket" name="springMVC_FCM_push" stamp="1619671329786" updateReferences="true"/>
+</session>

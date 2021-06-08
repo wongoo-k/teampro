@@ -1,0 +1,18 @@
+@charset "UTF-8";
+p {
+	padding: 10px;
+	background-color: antiquewhite;
+}
+.valign1 {
+	height: 50px;
+	line-height: 50px;
+}
+.valign2 {
+	height: 100px;
+	vertical-align: middle;
+}
+.valign3 {
+	height: 100px;
+	display: table-cell;
+	vertical-align: middle;
+}

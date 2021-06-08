@@ -1,0 +1,74 @@
+package brdMVC2;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ * Servlet implementation class BoardController
+ */
+@WebServlet("/listArticles.do")
+public class BoardList extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+	BoardService boardService;
+	ArticleVO vo;
+	
+	public void init() throws ServletException {
+		boardService = new BoardService();
+	}
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public BoardList() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		//response.getWriter().append("Served at: ").append(request.getContextPath());
+		doHandle(request, response);
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		doHandle(request, response);
+	}
+	
+	protected void doHandle(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		request.setCharacterEncoding("utf-8");
+		response.setContentType("text/html; charset=utf-8");
+		String action = request.getPathInfo();
+		System.out.println("action :" + action);
+		try {
+			List<ArticleVO> articlesList = new ArrayList<ArticleVO>();
+			if (action == null) {
+				articlesList = boardService.listArticles();
+				request.setAttribute("articlesList", articlesList);
+			} else if (action.equals("/listArticle.do")) {
+				articlesList = boardService.listArticles();
+				request.setAttribute("articlesList", articlesList);
+			}
+			RequestDispatcher dispatch = request.getRequestDispatcher("/board01/listArticles.jsp");
+			dispatch.forward(request, response);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+}

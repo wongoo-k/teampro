@@ -1,0 +1,7 @@
+@charset "UTF-8";
+@font-face { font-family: 'Gugi', cursive; 
+src:url('font/Guri-Regular.ttf') format('ttf'); }
+
+p {font-size: 3em;}
+.gt {font-family:'Gugi';}
+

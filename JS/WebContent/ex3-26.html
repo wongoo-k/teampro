@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>재귀함수(factorial)</title>
+<script src="js/ex3-31.js"></script>
+</head>
+<body>
+	<input type="text" id="userInput">
+	<button id="compute" onClick="compute()">계산하기</button>
+	<script>
+	function compute(){
+		var value = 0;
+		var userInputValue = document.getElementById("userInput").value;
+		value = factorial(userInputValue);
+		alert(userInputValue + "factorial = " + value);
+	}
+	</script>
+</body>
+</html>

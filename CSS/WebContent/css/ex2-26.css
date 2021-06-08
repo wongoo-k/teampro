@@ -1,0 +1,10 @@
+@charset "UTF-8";
+a {
+	text-decoration: none;
+	color: crimson;
+}
+p {
+	text-transform: capitalize;
+	font: bold 25px Times;
+	color: darkmagenta;
+}

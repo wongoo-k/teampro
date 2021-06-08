@@ -1,0 +1,30 @@
+@charset "UTF-8";
+
+p:first-letter {
+	font-size: 150%;
+}
+
+p:first-child {
+	color: blue;
+}
+
+p {
+	background: lightgray;
+}
+
+p:last-child {
+	background: palegoldenrod;
+}
+
+p:nth-child(3) {
+	color: red;
+}
+
+p:before {
+	content: "★";
+}
+
+.box:after {
+	content: "항목을 선택해주세요.";
+	color: red;
+}

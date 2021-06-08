@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<!DOCTYPE mapper 
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+<mapper namespace="member"> 
+	<!-- 회원가입 --> 
+	<insert id="join" parameterType="com.hk.board.dtos.MemberDTO"> 
+		insert into member 
+		values(#{mem_id, jdbcType=VARCHAR}, #{mem_pw, jdbcType=VARCHAR}, #{mem_name, jdbcType=VARCHAR}, #{mem_email, jdbcType=VARCHAR}, #{mem_phone, jdbcType=VARCHAR}, #{mem_oaddress, jdbcType=VARCHAR}, #{mem_address,jdbcType=VARCHAR}, #{mem_detailaddress, jdbcType=VARCHAR}, #{mem_type, jdbcType=VARCHAR}) 
+	</insert> 
+	<!-- 아이디 중복검사 -->
+  	<select id="idCheck" resultType="int">	
+  		select count(*) from Member where mem_id = #{mem_id}	
+  	</select>
+  	
+  	<!-- 01. 상품 전체 목록 -->
+  	<select id="listProduct" resultType="com.hk.board.dtos.ProductVO">
+  		SELECT
+  			product_id AS productId,
+  			product_name AS productName,
+  			product_price AS productPrice,
+  			product_desc AS productDesc,
+  			product_url AS productUrl
+  		FROM product
+  		ORDER BY product_name
+  	</select>
+  	<!-- 02. 상품 상세보기 -->
+  	<select id="detailProduct" resultType="com.hk.board.dtos.ProductVO">
+  		SELECT 
+  			product_id AS productId,
+  			product_name AS productName,
+  			product_price AS productPrice,
+  			product_desc AS productDesc,
+  			product_url AS productUrl
+  		FROM product
+  		WHERE product_id = #{productId}
+  	</select>
+</mapper>
+
+
+
+
+
+
+
+
+

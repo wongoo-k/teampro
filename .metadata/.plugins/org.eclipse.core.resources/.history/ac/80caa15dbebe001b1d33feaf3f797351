@@ -1,0 +1,5 @@
+package com.yogi.hoxy.service;
+
+public class CommentService {
+
+}

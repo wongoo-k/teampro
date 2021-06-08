@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>알람 시계</title>
+<link rel="stylesheet" type="text/css" href="css/alarmclock.css">
+<script src="js/alarmclock.js"></script>
+</head>
+<body>
+	<!-- - 시계 모양으로 구현  O
+- 시계 중간에 디지털로 시간 표시  O
+- 알람을 누르면 지정된 시간(초) 후에 알람이 동작 O
+  동작할때 시계가 화면에서 이동 O
+  끄기 버튼을 누르면 최초 화면으로 이동 O
+- 알람버튼을 다시 누르면 알람설정 화면 숨김 O 
+[2차 요구사항]
+- 알람이 울리기 전에 알람을 해제하는 기능 추가 O
+- 알람이 해제되었다면 해제되었다는 표시 O
+[3차 요구사항]
+- 알람을 끌때 반복해서 다시 알람이 울릴 수 있도록 (snooze 기능)  -->
+
+	<div id="clock">
+		<div id="btn" onclick="alarmView()">알람</div>
+		<div id="dc"></div>
+		<div id="setAlarm">
+			<input type="number" id="setAlarmInput" min="1" max="3600">초<br>
+			<input type="checkbox" id="snooze">스누즈 
+			<select id="snoozeValue">
+				<option value="1">2</option>
+				<option value="2">5</option>
+				<option value="3">10</option>
+			</select>초<br>
+			<button onclick="setAlarm()">설정</button>
+			<button onclick="stopAlarm()">끄기</button>
+		</div>
+	</div>
+</body>
+</html>

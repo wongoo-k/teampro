@@ -1,0 +1,23 @@
+package com.hk.board.daos;
+
+import java.util.List;
+
+import com.hk.board.dtos.CalDto;
+
+public interface ICalDao {
+	
+	public boolean insertCal(CalDto dto);
+	
+	public List<CalDto> calBoardList (String id, String yyyyMMdd);
+	
+	public CalDto calDetail (int seq);
+	
+	public boolean calUpdate(CalDto dto);
+	
+	public boolean calMuldel(String[] seq);
+	
+	public int calCount(String id, String yyyyMMdd);
+	
+	public List<CalDto> calViewList(String id, String yyyyMM);	
+	
+}

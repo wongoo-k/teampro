@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="css/signup.css">
+<script src="js/signup.js"></script>  <!-- window가 load가 끝나면.. -->
+
+<title>Insert title here</title>
+</head>
+<body>
+<!-- 
+  1) 회원 가입 항목
+      - ID (8자 이상, 특수문자 안됨)
+      - 패스워드 (8자 이상, 특수문자 포함, 대문자1개 이상)
+      - 이름 (3글자 이상 5글자이하)
+      - 가입일 (생일)
+      - 하고 싶은말 (여러줄 - texarea)
+ -->
+ <!--  form action에 상대경로하고.. Servlet만들때 절대경로처럼 생긴거 헷갈리지 말아야함. -->
+ <!-- form에서는  브라우저 URL에 현재값을 기준으로 상대 혹은 절대경로 -->
+ <!-- method get: 주소창에 서버에 보내는 값이 다 보이는 or post : 주소창에 안보이는  -->
+
+<form name="myForm" action="signup" onsubmit="return validateForm()" method="post">
+
+<label for="id">ID : </label>
+<input type="text" id="id" name="id" autofocus><br>
+
+<label for="pw">PW : </label>
+<input type="password" id="pw" name="pw"><br>
+
+<label for="name">NAME : </label>
+<input type="text" id="name" name="name"><br>
+
+<label for="date">DATE : </label>
+<input type="date" id="date" name="date"><br>
+
+<label for="intro">INTRO : </label>
+<textarea id="intro" name="intro"></textarea><br>
+
+<input type="reset" value="취소">
+<input type="submit" value="전송">
+   <!--  빠진기능 (js)
+          1. 값이 있는지 체크하기 
+          2. 값이 맞는지 체크하기 
+   -->   
+
+</form>
+
+</body>
+</html>

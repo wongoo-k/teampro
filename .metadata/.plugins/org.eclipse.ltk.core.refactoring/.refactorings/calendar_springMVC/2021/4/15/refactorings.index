@@ -1,0 +1,8 @@
+1617756269247	Rename type 'HkDto'
+1617768808583	Rename type 'ICalService'
+1617768823772	Rename type 'ICalServiceImp'
+1617768829691	Rename type 'CalService'
+1617845519680	Delete element
+1617845942300	Delete element
+1617845947479	Move 'img' to 'resources'
+1617934722495	Rename package 'com.hk.board.util'

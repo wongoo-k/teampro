@@ -1,0 +1,25 @@
+@charset "UTF-8";
+
+* {
+	margin: 10px;
+}
+
+#container {
+	background: lightgray;
+}
+
+h1 {
+	background: beige;
+}
+
+span {
+	color: red;
+}
+
+h2+p>span {
+	color: blue;
+}
+
+.tea1 {
+	background: beige;
+}

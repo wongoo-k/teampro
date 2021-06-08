@@ -1,0 +1,130 @@
+
+<!DOCTYPE html>
+<!--
+/*
+ * blueimp Gallery Demo
+ * https://github.com/blueimp/Gallery
+ *
+ * Copyright 2013, Sebastian Tschan
+ * https://blueimp.net
+ *
+ * Licensed under the MIT license:
+ * https://opensource.org/licenses/MIT
+ */
+-->
+<html lang="en">
+<head>
+<!--[if IE]>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <![endif]-->
+<meta charset="utf-8" />
+<title>blueimp Gallery</title>
+<meta name="description"
+	content="blueimp Gallery is a touch-enabled, responsive and customizable image and video gallery, carousel and lightbox, optimized for both mobile and desktop web browsers. It features swipe, mouse and keyboard navigation, transition effects, slideshow functionality, fullscreen support and on-demand content loading and can be extended to display additional content types." />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<link rel="stylesheet" href="css/blueimp-gallery.css" />
+<link rel="stylesheet" href="css/jquery-ui.css" />
+<script src="js/jquery-3.5.1.min.js"></script>
+<script src="js/blueimp-helper.js"></script>
+<script src="js/blueimp-gallery.js"></script>
+<script src="js/blueimp-gallery-fullscreen.js"></script>
+<script src="js/blueimp-gallery-indicator.js"></script>
+<script src="js/blueimp-gallery-video.js"></script>
+<script src="js/blueimp-gallery-vimeo.js"></script>
+<script src="js/blueimp-gallery-youtube.js"></script>
+<script src="js/vendor/jquery.js"></script>
+<script src="js/jquery.blueimp-gallery.js"></script>
+<script src="js/demo/demo.js"></script>
+
+
+<script src="js/eff.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+</head>
+<body>
+	<h2>Carousel image gallery</h2>
+	<!-- The Gallery as inline carousel -->
+	<div id="blueimp-image-carousel"
+		class="blueimp-gallery blueimp-gallery-carousel"
+		aria-label="image carousel">
+		<div class="slides" aria-live="off"></div>
+		<h3 class="title"></h3>
+		<a class="prev" aria-controls="blueimp-image-carousel"
+			aria-label="previous slide"></a> <a class="next"
+			aria-controls="blueimp-image-carousel" aria-label="next slide"></a> <a
+			class="play-pause" aria-controls="blueimp-image-carousel"
+			aria-label="play slideshow" aria-pressed="true" role="button"></a>
+	</div>
+	<h2>Carousel video gallery</h2>
+	<!-- The Gallery as inline carousel -->
+	<div id="blueimp-video-carousel"
+		class="blueimp-gallery blueimp-gallery-controls blueimp-gallery-carousel"
+		aria-label="video carousel">
+		<div class="slides" aria-live="polite"></div>
+		<h3 class="title"></h3>
+		<a class="prev" aria-controls="blueimp-video-carousel"
+			aria-label="previous slide"></a> <a class="next"
+			aria-controls="blueimp-video-carousel" aria-label="next slide"></a>
+	</div>
+	<h2>Lightbox image gallery</h2>
+	<p>
+		<input type="checkbox" id="fullscreen" /> <label for="fullscreen">Fullscreen</label>
+	</p>
+	<!-- The container for the list of example images -->
+	<div id="links" class="links"></div>
+	<!-- The Gallery as lightbox dialog -->
+	<div id="blueimp-gallery" class="blueimp-gallery"
+		aria-label="image gallery" aria-modal="true" role="dialog">
+		<div class="slides" aria-live="polite"></div>
+		<h3 class="title"></h3>
+		<a class="prev" aria-controls="blueimp-gallery"
+			aria-label="previous slide" aria-keyshortcuts="ArrowLeft"></a> <a
+			class="next" aria-controls="blueimp-gallery" aria-label="next slide"
+			aria-keyshortcuts="ArrowRight"></a> <a class="close"
+			aria-controls="blueimp-gallery" aria-label="close"
+			aria-keyshortcuts="Escape"></a> <a class="play-pause"
+			aria-controls="blueimp-gallery" aria-label="play slideshow"
+			aria-keyshortcuts="Space" aria-pressed="false" role="button"></a>
+		<ol class="indicator"></ol>
+	</div>
+
+	<br>
+	<br>
+	<br>
+	<br>
+
+	<div class="toggler">
+		<div style="border: 3px" id="effect"
+			class="ui-widget-content ui-corner-all">
+			<h3 class="ui-widget-header ui-corner-all">Effect</h3>
+			<p>Etiam libero neque, luctus a, eleifend nec, semper at, lorem.
+				Sed pede. Nulla lorem metus, adipiscing ut, luctus sed, hendrerit
+				vitae, mi.</p>
+		</div>
+	</div>
+
+	<select name="effects" id="effectTypes">
+		<option value="blind">Blind</option>
+		<option value="bounce">Bounce</option>
+		<option value="clip">Clip</option>
+		<option value="drop">Drop</option>
+		<option value="explode">Explode</option>
+		<option value="fade">Fade</option>
+		<option value="fold">Fold</option>
+		<option value="highlight">Highlight</option>
+		<option value="puff">Puff</option>
+		<option value="pulsate">Pulsate</option>
+		<option value="scale">Scale</option>
+		<option value="shake">Shake</option>
+		<option value="size">Size</option>
+		<option value="slide">Slide</option>
+		<option value="transfer">Transfer</option>
+	</select>
+
+	<button id="button" class="ui-state-default ui-corner-all">Run
+		Effect</button>
+
+
+</body>
+</html>

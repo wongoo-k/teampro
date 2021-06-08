@@ -1,0 +1,10 @@
+@charset "UTF-8";
+
+p {
+	width: 200px;
+	text-align: center;
+	border: 1px solid #000;
+}
+.breaking1 { word-break: normal; }
+.breaking2 { word-break: break-all; }
+.breaking3 { word-break: keep-all; }

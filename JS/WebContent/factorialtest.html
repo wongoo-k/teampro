@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+//<![CDATA[
+var str = "";
+function factorial(n) { 
+   if (n==1) {
+      str += n + "=";
+      return 1; 
+   } else {
+      str += n + "*";
+   }
+   return n * factorial(n -1) ;
+}
+function computeFacto(n) { 
+   var factoVal=0;
+   str = "";
+   factoVal = factorial(n);
+   document.getElementById("factoDisplay").innerHTML = str + factoVal;
+}
+//]]>
+</script>
+</head>
+<body>
+<input type="text" id="factoValue">
+<button id="facto" onclick="computeFacto(factoValue.value)">계산</button>
+<p id="factoDisplay"></p>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<!-- <link rel="stylesheet" type="text/css" href="css/lottoGame.css"> -->
+<script src="js/newLotto.js"></script>
+</head>
+<body>
+<fieldset>
+   <legend>로또번호만들기</legend>
+   <div>
+      <span>(0)로또번호:</span>
+      <span>(1)</span>
+      &nbsp;&nbsp;&nbsp;
+      <span>(2)보너스번호:</span>
+      <span>(3)</span>
+      <button onclick="lottoPrint()">생성</button>
+   </div>
+   <div>
+      <span>(4)로또번호:</span>
+      <span>(5)</span>
+      &nbsp;&nbsp;&nbsp;
+      <span>(6)보너스번호:</span>
+      <span>(7)</span>
+   </div>
+   
+</fieldset>
+
+<fieldset>
+   <legend>사용자 번호만들기</legend>
+   <div>
+      사용자 번호 입력기능
+      <!-- 사용자에게 입력을 받는다..  -->
+      <!--  input type - 사용자가 직접입력/선택하든.. -->
+      <!--  6개의 숫자를 입력받는데 
+           1) 1개 숫자를 입력 받고 중복체크한다. (별도로 입력완료 버튼X)
+           2) 6개를 다 받고 중복체크한다.  (별도의 입력완료 버튼 필요함)
+       -->
+       
+       <input name="userInput" type="number" min="1" max="45" onchange="checkDup(this.value,0)">
+       <input name="userInput" type="number" min="1" max="45" onchange="checkDup(this.value,1)">
+       <input name="userInput" type="number" min="1" max="45" onchange="checkDup(this.value,2)">
+       <input name="userInput" type="number" min="1" max="45" onchange="checkDup(this.value,3)">
+       <input name="userInput" type="number" min="1" max="45" onchange="checkDup(this.value,4)">
+       <input name="userInput" type="number" min="1" max="45" onchange="checkDup(this.value,5)">
+              
+   </div>
+</fieldset>
+
+<fieldset>
+   <legend>사용자 번호만들기-6개다 입력받기</legend>
+   <div>
+      사용자 번호 입력기능
+      <!-- 사용자에게 입력을 받는다..  -->
+      <!--  input type - 사용자가 직접입력/선택하든.. -->
+      <!--  6개의 숫자를 입력받는데 
+           1) 1개 숫자를 입력 받고 중복체크한다. (별도로 입력완료 버튼X)
+           2) 6개를 다 받고 중복체크한다.  (별도의 입력완료 버튼 필요함)
+       -->
+       
+       <input name="userInputDone" type="number" min="1" max="45" >
+       <input name="userInputDone" type="number" min="1" max="45" >
+       <input name="userInputDone" type="number" min="1" max="45" >
+       <input name="userInputDone" type="number" min="1" max="45" >
+       <input name="userInputDone" type="number" min="1" max="45" >
+       <input name="userInputDone" type="number" min="1" max="45" >
+       <button onClick="checkDupDone()">입력하기</button>
+              
+   </div>
+</fieldset>
+
+<fieldset>
+   <legend>결과 화면</legend>
+   <div id="comBallResult">
+      <!--  여기에 한줄씩 표시  -->
+      
+   </div>
+   <div id="userBallResult">
+      <!--  여기에 한줄씩 표시  -->
+   
+   </div>
+</fieldset>
+
+</body>
+</html>

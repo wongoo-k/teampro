@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.wg.mem">
+<!-- 
+	 특수문자 (특히 부등호 <>) 를 쓸땐 오류가 발생하지 않게 CDATA 안에 작성
+	 <![CDATA[
+	 	SELECT SEQ, ID, NAME, TITLE, CONTENT, REGDATE 
+		FROM HKBOARD WHERE SEQ < 10
+	 ]]>
+ -->
+	<select id="getAllMember" resultType="WgDto"> <!-- resultMap 을 사용할꺼면 위에 따로 선언해야함-->
+		SELECT ID, PWD, NAME, EMAIL, JOINDATE 
+		FROM T_MEMBER 
+		ORDER BY JOINDATE DESC
+	</select>
+	
+	<select id="getMember" parameterType="String" resultType="WgDto"> <!-- 전달하려는 값이 1개일 경우 그 값의 타입으로 지정 -->
+		SELECT ID, PWD, NAME, EMAIL, JOINDATE
+		FROM T_MEMBER WHERE ID = #{id}
+	</select>
+	
+	<insert id="joinMember" parameterType="WgDto">
+		INSERT INTO T_MEMBER
+		VALUES (#{id},#{pwd},#{name},#{email},SYSDATE)
+	</insert>
+	
+ 	<update id="updateMember" parameterType="WgDto">
+		UPDATE T_MEMBER SET
+		PWD = #{pwd}, NAME = #{name}, EMAIL = #{email}
+		WHERE ID = #{id}
+	</update>
+	
+	<delete id="deleteMember" parameterType="String">
+		DELETE FROM T_MEMBER WHERE ID = #{id}
+	</delete>
+	
+	<!-- *Dynamic Query -->
+	<delete id="muldelMember" parameterType="Map">
+		DELETE FROM T_MEMBER WHERE ID IN 
+		<foreach collection="chks" item="i" separator="," open="(" close=")">		
+			#{i}
+		</foreach>
+	</delete>
+	
+</mapper>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+<!-- 	DB 접속정보 파일 설정 -->
+	<properties resource="com/wg/sql/db.properties"/> <!-- db.properties는 class가 아니기때문에 패키지명의 경로는 /로 표기. -->
+	
+<!-- 	변수설정 -->
+	<typeAliases>
+		<typeAlias type="com.wg.dtos.wgDTO" alias="wgDTO"/> <!-- 여러개 사용가능 , wgDTO는 class 이기때문에 패키지명의 경로가 /가 아닌 .으로 표기 -->
+	</typeAliases>
+	
+<!-- 	DB접속 정보 셋팅 -->
+	<environments default="development">
+		<environment id="development">
+			<transactionManager type="JDBC"/>
+			<dataSource type="POOLED">
+				<property name="driver" value="${driver}"/>
+				<property name="url" value="${url}"/>
+				<property name="username" value="${username}"/>
+				<property name="password" value="${password}"/>
+			</dataSource>
+		</environment>
+	</environments>
+	
+	<mappers>
+		<mapper resource="com/wg/sql/DataMapper.xml"/> <!-- 여러개 사용 가능 -->
+	</mappers>
+</configuration>
+
+
+

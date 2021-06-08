@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy package &apos;Member&apos; to &apos;member_MVC2_mybatis/src&apos;&#x0D;&#x0A;- Original project: &apos;newMemberProject&apos;&#x0D;&#x0A;- Destination element: &apos;member_MVC2_mybatis/src&apos;&#x0D;&#x0A;- Original element: &apos;newMemberProject/src/Member&apos;" description="Copy package" destination="=member_MVC2_mybatis/src" element1="/src&lt;Member" flags="589830" fragments="1" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyPackages" stamp="1617168765237" version="1.0"/>
+</session>

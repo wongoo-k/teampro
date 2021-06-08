@@ -1,0 +1,9 @@
+1617607788882	Delete element
+1617610125992	Rename package 'com.hk.board.daos'
+1617610138742	Rename package 'com.hk.board.service'
+1617610147730	Rename package 'com.hk.board.dtos'
+1617610254163	Rename type 'HkDto'
+1617610336101	Rename type 'HkDao'
+1617610344097	Rename type 'IHkDao'
+1617610361502	Rename type 'HkService'
+1617610369589	Rename type 'IHkService'

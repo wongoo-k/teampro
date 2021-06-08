@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>로또추첨</title>
+<link rel="stylesheet" type="text/css" href="css/lottoGame.css">
+<script src="js/lottoGame.js"></script>
+</head>
+<body>
+<fieldset>
+   <legend>이번주 로또 당첨 번호 생성</legend>
+   <button onclick="comLottoPrint();">생성</button>     
+</fieldset>
+<fieldset>
+	<legend>로또추첨(수동)</legend>
+	<input type="number" class="input" min="1" max="45" onchange="ManLotto(this.value,0)">
+	&nbsp;&nbsp;
+	<input type="number" class="input" min="1" max="45" onchange="ManLotto(this.value,1)">
+	&nbsp;&nbsp;
+	<input type="number" class="input" min="1" max="45" onchange="ManLotto(this.value,2)">
+	&nbsp;&nbsp;
+	<input type="number" class="input" min="1" max="45" onchange="ManLotto(this.value,3)">
+	&nbsp;&nbsp;
+	<input type="number" class="input" min="1" max="45" onchange="ManLotto(this.value,4)">
+	&nbsp;&nbsp;
+	<input type="number" class="input" min="1" max="45" onchange="ManLotto(this.value,5)">
+	&nbsp;&nbsp;
+	<button onclick="">수동생성</button>
+	<br><br>
+	<span id="result1">여기</span>
+	<button onclick="">수동등록</button>
+</fieldset>
+<fieldset>
+	<legend>로또추첨(자동)</legend>
+	<input type="number" id="setCount" min="1" max="100">
+	<button onclick="autoLotto()">자동생성</button>
+</fieldset>
+<fieldset>
+    <legend>번호 생성 결과</legend>
+    <div id="comBallResult">
+    	<span id="comSiXBall"></span>
+    	&nbsp;&nbsp;&nbsp;
+    	<span id="comBonusBall"></span>
+    </div>
+</fieldset>
+<fieldset>
+   <legend>당첨 결과</legend>
+   <div id="userBallResult">
+      <span id="userSiXBall"></span>
+   </div>
+</fieldset>
+</body>
+</html>
